@@ -36,7 +36,7 @@ if (isset($_POST["espacio22"])) {
 }
 
 
-
+$contador = 0;
 
 $tiro = !$_SESSION["turno"];
 $_SESSION["turno"] = $tiro;
@@ -50,6 +50,7 @@ if ($tiro == true) {
     while ($xd <= 0) {
         $permitted_chars = 'ABCDEFGHI';
         $random = substr(str_shuffle($permitted_chars), 0, 1);
+        $contador = $contador + 1;
         if ($random == "A") {
             if (!isset($_SESSION["espacio00"]) && !isset($_SESSION["espacio00bot"])) {
                 $_SESSION["espacio00bot"] = 1;
@@ -141,7 +142,7 @@ if ($tiro == true) {
         width: 100px;
         height: 50px;
         border-radius: 15px;
-        background-color: red;
+        background-color: green;
         color: white;
         border: black;
     }
@@ -149,13 +150,15 @@ if ($tiro == true) {
     .boton01 {
         width: 130px;
         height: 130px;
-        background-color: blue;
+        background-image: url("./img/x.png");
+        /* background-color: blue; */
     }
 
     .boton02 {
         width: 130px;
         height: 130px;
-        background-color: red;
+        background-image: url("./img/O.png");
+        /*background-color: red;*/
     }
 
     /* .boton:focus {
@@ -201,7 +204,7 @@ if ($tiro == true) {
                         <tr>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio00" value="<?php echo $matriz[0][0] = 1; ?>">
+                                    <input type="hidden" name="espacio00" value="<?php echo $matriz[0][0] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio00"]) && !isset($_SESSION["espacio00bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -217,7 +220,7 @@ if ($tiro == true) {
                             </td>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio01" value="<?php echo $matriz[0][1] = 2; ?>">
+                                    <input type="hidden" name="espacio01" value="<?php echo $matriz[0][1] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio01"]) && !isset($_SESSION["espacio01bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -233,7 +236,7 @@ if ($tiro == true) {
                             </td>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio02" value="<?php echo $matriz[0][2] = 3; ?>">
+                                    <input type="hidden" name="espacio02" value="<?php echo $matriz[0][2] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio02"]) && !isset($_SESSION["espacio02bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -251,7 +254,7 @@ if ($tiro == true) {
                         <tr>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio10" value="<?php echo $matriz[1][0] = 4; ?>">
+                                    <input type="hidden" name="espacio10" value="<?php echo $matriz[1][0] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio10"]) && !isset($_SESSION["espacio10bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -267,7 +270,7 @@ if ($tiro == true) {
                             </td>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio11" value="<?php echo $matriz[1][1] = 5; ?>">
+                                    <input type="hidden" name="espacio11" value="<?php echo $matriz[1][1] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio11"]) && !isset($_SESSION["espacio11bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -283,7 +286,7 @@ if ($tiro == true) {
                             </td>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio12" value="<?php echo $matriz[1][2] = 6; ?>">
+                                    <input type="hidden" name="espacio12" value="<?php echo $matriz[1][2] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio12"]) && !isset($_SESSION["espacio12bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -301,7 +304,7 @@ if ($tiro == true) {
                         <tr>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio20" value="<?php echo $matriz[2][0] = 7; ?>">
+                                    <input type="hidden" name="espacio20" value="<?php echo $matriz[2][0] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio20"]) && !isset($_SESSION["espacio20bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -317,7 +320,7 @@ if ($tiro == true) {
                             </td>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio21" value="<?php echo $matriz[2][1] = 8; ?>">
+                                    <input type="hidden" name="espacio21" value="<?php echo $matriz[2][1] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio21"]) && !isset($_SESSION["espacio21bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -333,7 +336,7 @@ if ($tiro == true) {
                             </td>
                             <td>
                                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                                    <input type="hidden" name="espacio22" value="<?php echo $matriz[2][2] = 9; ?>">
+                                    <input type="hidden" name="espacio22" value="<?php echo $matriz[2][2] = "-"; ?>">
                                     <?php if (!isset($_SESSION["espacio22"]) && !isset($_SESSION["espacio22bot"])) { ?>
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
@@ -430,57 +433,143 @@ if (isset($_SESSION["espacio22bot"])) {
     $espaciobot[2][2] = $_SESSION["espacio22bot"];
 }
 
+
 if (isset($espacio[0][0]) && isset($espacio[0][1]) && isset($espacio[0][2])) {
+    $matriz[0][0] = "X";
+    $matriz[0][1] = "X";
+    $matriz[0][2] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado linea 1 horizontal";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[1][0]) && isset($espacio[1][1]) && isset($espacio[1][2])) {
+    $matriz[1][0] = "X";
+    $matriz[1][1] = "X";
+    $matriz[1][2] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado linea 2 horizontal";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[2][0]) && isset($espacio[2][1]) && isset($espacio[2][2])) {
+    $matriz[2][0] = "X";
+    $matriz[2][1] = "X";
+    $matriz[2][2] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado linea 3 horizontal";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[0][0]) && isset($espacio[1][0]) && isset($espacio[2][0])) {
+    $matriz[0][0] = "X";
+    $matriz[1][0] = "X";
+    $matriz[2][0] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado linea 1 vetical";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[0][1]) && isset($espacio[1][1]) && isset($espacio[2][1])) {
+    $matriz[0][1] = "X";
+    $matriz[1][1] = "X";
+    $matriz[2][1] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado linea 2 vertical";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[0][2]) && isset($espacio[1][2]) && isset($espacio[2][2])) {
+    $matriz[0][2] = "X";
+    $matriz[1][2] = "X";
+    $matriz[2][2] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado linea 3 vertical";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[0][0]) && isset($espacio[1][1]) && isset($espacio[2][2])) {
+    $matriz[0][0] = "X";
+    $matriz[1][1] = "X";
+    $matriz[2][2] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado diagonal \ ";
-    alert($message);
+    alert($message, $matriz, $ganador);
 } else if (isset($espacio[0][2]) && isset($espacio[1][1]) && isset($espacio[2][0])) {
+    $matriz[0][2] = "X";
+    $matriz[1][1] = "X";
+    $matriz[2][0] = "X";
+    $ganador = $_SESSION["jugador"];
     $message = "Juego terminado diagonal / ";
-    alert($message);
+    alert($message, $matriz, $ganador);
+} else 
+if (isset($espaciobot[0][0]) && isset($espaciobot[0][1]) && isset($espaciobot[0][2])) {
+    $matriz[0][0] = "O";
+    $matriz[0][1] = "O";
+    $matriz[0][2] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado linea 1 horizontal";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[1][0]) && isset($espaciobot[1][1]) && isset($espaciobot[1][2])) {
+    $matriz[1][0] = "O";
+    $matriz[1][1] = "O";
+    $matriz[1][2] = "O";
+    $message = "Juego terminado linea 2 horizontal";
+    $ganador = "El bot de Braquetes";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[2][0]) && isset($espaciobot[2][1]) && isset($espaciobot[2][2])) {
+    $matriz[2][0] = "O";
+    $matriz[2][1] = "O";
+    $matriz[2][2] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado linea 3 horizontal";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[0][0]) && isset($espaciobot[1][0]) && isset($espaciobot[2][0])) {
+    $matriz[0][0] = "O";
+    $matriz[1][0] = "O";
+    $matriz[2][0] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado linea 1 vetical";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[0][1]) && isset($espaciobot[1][1]) && isset($espaciobot[2][1])) {
+    $matriz[0][1] = "O";
+    $matriz[1][1] = "O";
+    $matriz[2][1] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado linea 2 vertical";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[0][2]) && isset($espaciobot[1][2]) && isset($espaciobot[2][2])) {
+    $matriz[0][2] = "O";
+    $matriz[1][2] = "O";
+    $matriz[2][2] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado linea 3 vertical";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[0][0]) && isset($espaciobot[1][1]) && isset($espaciobot[2][2])) {
+    $matriz[0][0] = "O";
+    $matriz[1][1] = "O";
+    $matriz[2][2] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado diagonal \ ";
+    alert($message, $matriz, $ganador);
+} else if (isset($espaciobot[0][2]) && isset($espaciobot[1][1]) && isset($espaciobot[2][0])) {
+    $matriz[0][2] = "O";
+    $matriz[1][1] = "O";
+    $matriz[2][0] = "O";
+    $ganador = "El bot de Braquetes";
+    $message = "Juego terminado diagonal / ";
+    alert($message, $matriz, $ganador);
+} else
+if (isset($espaciobot[0][0]) || isset($espacio[0][0])) {
+    if (isset($espaciobot[0][1]) || isset($espacio[0][1])) {
+        if (isset($espaciobot[0][2]) || isset($espacio[0][2])) {
+            if (isset($espaciobot[1][0]) || isset($espacio[1][0])) {
+                if (isset($espaciobot[1][1]) || isset($espacio[1][1])) {
+                    if (isset($espaciobot[1][2]) || isset($espacio[1][2])) {
+                        if (isset($espaciobot[2][0]) || isset($espacio[2][0])) {
+                            if (isset($espaciobot[2][1]) || isset($espacio[2][1])) {
+                                if (isset($espaciobot[2][2]) || isset($espacio[2][2])) {
+                                    $ganador = "Empate";
+                                    $message = "Partida terminado en empate";
+                                    alert($message, $matriz, $ganador);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-if (isset($espaciobot[0][0]) && isset($espaciobot[0][1]) && isset($espaciobot[0][2])) {
-    $message = "Juego terminado linea 1 horizontal";
-    alert($message);
-} else if (isset($espaciobot[1][0]) && isset($espaciobot[1][1]) && isset($espaciobot[1][2])) {
-    $message = "Juego terminado linea 2 horizontal";
-    alert($message);
-} else if (isset($espaciobot[2][0]) && isset($espaciobot[2][1]) && isset($espaciobot[2][2])) {
-    $message = "Juego terminado linea 3 horizontal";
-    alert($message);
-} else if (isset($espaciobot[0][0]) && isset($espaciobot[1][0]) && isset($espaciobot[2][0])) {
-    $message = "Juego terminado linea 1 vetical";
-    alert($message);
-} else if (isset($espaciobot[0][1]) && isset($espaciobot[1][1]) && isset($espaciobot[2][1])) {
-    $message = "Juego terminado linea 2 vertical";
-    alert($message);
-} else if (isset($espaciobot[0][2]) && isset($espaciobot[1][2]) && isset($espaciobot[2][2])) {
-    $message = "Juego terminado linea 3 vertical";
-    alert($message);
-} else if (isset($espaciobot[0][0]) && isset($espaciobot[1][1]) && isset($espaciobot[2][2])) {
-    $message = "Juego terminado diagonal \ ";
-    alert($message);
-} else if (isset($espaciobot[0][2]) && isset($espaciobot[1][1]) && isset($espaciobot[2][0])) {
-    $message = "Juego terminado diagonal / ";
-    alert($message);
-}
 ?>
 <script type="text/javascript">
     function ConfirmDemo() {
@@ -488,27 +577,43 @@ if (isset($espaciobot[0][0]) && isset($espaciobot[0][1]) && isset($espaciobot[0]
         var mensaje = confirm("¿Quieres jugar de nuevo?");
         //Detectamos si el usuario acepto el mensaje
         if (mensaje) {
-            alert("¡Gracias por aceptar!");
-            window.location.href = "./controllers/restart.php";
+            window.location.href = "./controllers/continue.php";
         }
         //Detectamos si el usuario denegó el mensaje
         else {
-            alert("¡Vuélve pronto!");
             window.location.href = "./controllers/logout.php";
         }
     }
 </script>
-
 <?php
-function alert($message)
+function alert($message, $matriz, $ganador)
 {
 ?>
-    <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+    <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
         <div class="card-header"><?php echo $message; ?></div>
-        <div class="card-body">
+        <div class="card-header">Ganó: <?php echo $ganador; ?></div>
+        <div class="card-body" align="center">
+            <table>
+                <tr>
+                    <td><?php echo $matriz[0][0]; ?>|</td>
+                    <td><?php echo $matriz[0][1]; ?>|</td>
+                    <td><?php echo $matriz[0][2]; ?></td>
+                </tr>
+                <tr>
+                    <td> <?php echo $matriz[1][0]; ?>|</td>
+                    <td> <?php echo $matriz[1][1]; ?>|</td>
+                    <td> <?php echo $matriz[1][2]; ?></td>
+                </tr>
+                <tr>
+                    <td> <?php echo $matriz[2][0]; ?>|</td>
+                    <td> <?php echo $matriz[2][1]; ?>|</td>
+                    <td> <?php echo $matriz[2][2]; ?></td>
+                </tr>
+            </table>
             <button class="botonF" onclick="ConfirmDemo()">Opciones</button>
         </div>
     </div>
 <?php
+    $_SESSION["dato_ganador"] = $ganador;
 }
 ?>
