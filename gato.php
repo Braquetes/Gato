@@ -209,7 +209,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio00"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio00bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -225,7 +225,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio01"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio01bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -241,7 +241,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio02"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio02bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -259,7 +259,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio10"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio10bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -275,7 +275,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio11"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio11bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -291,7 +291,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio12"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio12bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -309,7 +309,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio20"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio20bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -325,7 +325,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio21"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio21bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
@@ -341,7 +341,7 @@ if ($tiro == true) {
                                         <button type="submit" class="boton"></button>
                                     <?php   }    ?>
                                     <?php if (isset($_SESSION["espacio22"])) { ?>
-                                        <button type="submit" class="boton01"></button>
+                                        <button type="submit" class="boton01" disabled></button>
                                     <?php } else ?>
                                     <?php if (isset($_SESSION["espacio22bot"])) { ?>
                                         <button type="submit" class="boton02" disabled></button>
